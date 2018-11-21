@@ -1,15 +1,21 @@
 package com.profesorp;
 
-public class MiBean {
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+public class MiValidateBean {
 	private int codigo;
+	
+	@Size(min=2, message="Campo 'valor' deberia tener al menos 2 caracteres")
+	@NotNull(message="Campo 'valor' no puede ser nulo")
 	private String valor;
 	
-	public MiBean()
+	public MiValidateBean()
 	{
 		
 	}
 	
-	public MiBean(int codigo, String valor) {
+	public MiValidateBean(int codigo, String valor) {
 		super();
 		this.codigo = codigo;
 		this.valor = valor;
